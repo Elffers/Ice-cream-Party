@@ -1,12 +1,14 @@
 ### ICE CREAM PARTY PLANNER
 
+# hash = {"Elizabeth"=>["caramel", "chocolate"], "HHH"=>["hazelnut", "vanilla"], "Anne"=>["pistachio"], "Audrey"=>["pistachio"], "Davida"=>["vanilla", "chocolate"]}
 hash = {}
+
 
 def add_invitee(hash)
 	puts "What is your name?"
 	name = gets.chomp
 	puts "What is your favorite ice cream flavor?"
-	flavor = gets.chomp
+	flavor = gets.chomp.split(', ')
 	hash[name] = flavor
 	puts hash
 end
@@ -26,7 +28,7 @@ end
 def report_by_name(hash)
 	names = hash.keys.sort
 	names.each do |name|
-		puts name + "'s favorite flavor is " + hash[name]
+		puts name.to_s + "'s favorite flavor(s) are: " + hash[name].join(', ')
 	end
 end
 
